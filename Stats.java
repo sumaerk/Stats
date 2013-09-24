@@ -73,9 +73,9 @@ class Stats {
 	public static double median(int [] a){
 		double median = 0.0;
 		if( a.length%2 == 0){
-			median = ((double)(a[a.length/2]) + ((double)a[a.length/4 - 1]) / 2.0);
+			median = ((double)(a[a.length/2]) + ((double)a[a.length/2 - 1]) / 2.0);
 		} else{
-			median = a[a.length];
+			median = a[a.length/2];
 		}
 		return median;	
 
@@ -112,7 +112,7 @@ class Stats {
 
 	}
 
-	public static double upperQuartile(int[] a) {
+	public static double quartile3(int[] a) {
 			double median = 0.0;
 			int oddlength = a.length - 1;
 			if (a.length % 2 == 0) {
@@ -131,7 +131,7 @@ class Stats {
 			return median;
 	}
 
-	public static double quartile3(int[] a) {
+	public static double standardDeviation(int[] a) {
 			int u = 0;
 			int[] m = new int[a.length];
 			double sum = 0;
@@ -164,7 +164,7 @@ class Stats {
 				if ((oddLength/2) % 2 == 0) {
 					median = ((double)a[oddLength/4] + (double)a[(oddLength/4 + 1)]) / 2.0;
 				} else {
-					median = a[((oddLength - 2)/4 - 1)] + a[(oddLength - 2)/4];
+					median = ((double)a[((oddLength - 2)/4 - 1)] + (double)a[(oddLength - 2)/4]) /2.0;
 				}
 			}
 			return median;
